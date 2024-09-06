@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Link Scanner</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #00ff9c;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            position: relative; /* Ensures .social-links is positioned relative to body */
+            min-height: 100vh; /* Ensures body takes full viewport height */
+        }
+        h1, h2 {
+            text-align: center;
+            margin-top: 50px;
+            color: #00ccff;
+            text-shadow: 0 0 10px #2d9fa3, 0 0 20px #00ddff;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+        input {
+            background-color: #1a1a1a;
+            border: 2px solid #00ff9c;
+            padding: 10px;
+            width: 350px;
+            margin-bottom: 20px;
+            color: #00f7ff;
+            font-size: 16px;
+            border-radius: 5px;
+            text-shadow: 0 0 5px #00ff9c;
+        }
+        button {
+            padding: 10px 25px;
+            background-color: #1a1a1a;
+            color: #00ff9c;
+            font-size: 18px;
+            border: 2px solid #00ff9c;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            text-shadow: 0 0 5px #00ff9c;
+        }
+        button:hover {
+            background-color: #00eaff;
+            color: #0d0d0d;
+            box-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c;
+        }
+        .example {
+            text-align: center;
+            margin-top: 20px;
+            color: #00eeff;
+            font-size: 14px;
+            text-shadow: 0 0 5px #00c8ff;
+        }
+        pre {
+            background-color: #1a1a1a;
+            border: 2px solid #00ff9c;
+            padding: 15px;
+            margin: 20px auto;
+            width: 80%;
+            color: #00fff2;
+            font-size: 16px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border-radius: 10px;
+            text-shadow: 0 0 5px #00ff9c;
+        }
+        .social-links {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+            padding: 70px;
+        }
+        .social-links a {
+            color: #0008ff;
+            text-decoration: none;
+            font-size: 18px;
+            text-shadow: 0 0 5px #ff00f2;
+        }
+        .social-links a:hover {
+            color: #00eaff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phishing Link Scanner</h1>
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter URL (e.g., https://www.google.com)" required>
+        <button type="submit">Scan</button>
+    </form>
+
+    <div class="example">
+        <p>Example: https://www.google.com</p>
+        <p>Please include "http://" or "https://" in the URL.</p>
+    </div>
+
+    {% if result %}
+        <h2>Scan Results:</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+
+    <div class="social-links">
+        Reach me out on LinkedIn or check out my Github:
+        <a href="https://linkedin.com/in/muhammedpatel007/" target="_blank">LinkedIn</a> <br/>
+        <a href="https://github.com/muhammedp07/" target="_blank">GitHub</a>
+        
+    </div>
+</body>
+</html>
