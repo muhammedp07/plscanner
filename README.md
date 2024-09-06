@@ -1,0 +1,2 @@
+# plscanner
+Phishing link scanner
