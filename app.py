@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from plscanner import *
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
 
 @app.route("/", methods=["GET", "POST"])
 
