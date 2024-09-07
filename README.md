@@ -45,6 +45,21 @@ This `README.md` provides a clear overview of your project, installation instruc
 - **Click the "Scan" button.
 - **View the results below the form.
 
+## Demo screenshots
+
+Here’s how the application looks when running locally:
+
+![Homepage Screenshot](images/Homepage.png)
+*Homepage*
+
+
+![Scan Results Screenshot](images/non_sus_link.png)
+*Scan Results Screenshot non sus link*
+
+
+![Scan Results Screenshot](images/sus_link.png)
+*Scan Results Screenshot sus link*
+
 ## Contributing
 
 Contributions are welcome! If you have suggestions or improvements, please fork the repository and submit a pull request. You can also open an issue to discuss any bugs or feature requests.
