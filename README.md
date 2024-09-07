@@ -70,10 +70,10 @@ Contributions are welcome! If you have suggestions or improvements, please fork 
 
 ## Acknowledgements
 
-- **Flask: For the lightweight web framework.
-- **Jinja2: For the templating engine.
-- **Python: For the programming language.
-- **Google Cloud Console API Safe Browsing: For checking phishing links against Google's Safe Browsing database.
+- Flask: For the lightweight web framework.
+- Jinja2: For the templating engine.
+- Python: For the programming language.
+- Google Cloud Console API Safe Browsing: For checking phishing links against Google's Safe Browsing database.
 
 ## Contact
 
