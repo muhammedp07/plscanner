@@ -2,6 +2,10 @@
 
 A simple yet effective phishing link scanner built with Python and Flask. This tool provides a web-based interface for users to check if a URL might be a phishing attempt. The application uses a custom phishing detection algorithm and features a modern neon-themed design.
 
+#Note
+
+The site is not yet hosted online. However, you can clone this repository and run the application locally to test it.
+
 ## Features
 
 - **Web Interface**: Enter URLs through an easy-to-use web form.
