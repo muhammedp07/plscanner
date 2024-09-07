@@ -28,7 +28,7 @@ def check_for_phishing_keywords(url):
 
 # Check URL against public phishing database (PhishTank)
 def check_with_phishtank(url):
-    api_key = "YOUR_API_KEY"  # Replace with actual PhishTank API key
+    api_key = "AIzaSyCiScMGxiIXnsp9--du__7KIgIyRrj1CCM"  # Replace with actual PhishTank API key
     response = requests.post(
         "http://checkurl.phishtank.com/checkurl/",
         data={"url": url, "format": "json", "app_key": api_key}
