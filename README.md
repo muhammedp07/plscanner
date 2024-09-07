@@ -43,11 +43,11 @@ This `README.md` provides a clear overview of your project, installation instruc
 
 ## Usage
 
-- **Open the application in your web browser.
-- **Enter the URL you want to check in the input field.
-- **Click the "Scan" button.
-- **Click the "Scan" button.
-- **View the results below the form.
+- Open the application in your web browser.
+- Enter the URL you want to check in the input field.
+- Click the "Scan" button.
+- Click the "Scan" button.
+- View the results below the form.
 
 ## Demo screenshots
 
