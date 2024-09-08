@@ -79,5 +79,5 @@ Contributions are welcome! If you have suggestions or improvements, please fork 
 
 For any questions or inquiries, please contact me via:
 
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/muhammedpatel007/)
+- **LinkedIn**: [Connect](https://www.linkedin.com/in/muhammedpatel007/)
 
