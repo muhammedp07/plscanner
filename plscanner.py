@@ -26,9 +26,9 @@ def check_for_phishing_keywords(url):
         return "Suspicious URL: Contains phishing-related keywords."
     return "No suspicious keywords found."
 
-# Check URL against public phishing database (PhishTank)
+# ( Using Google SAfe Browing Database)
 def check_with_phishtank(url):
-    api_key = "AIzaSyCxJ8CJuAZPVzrs6SMeN37v_gnTlfd-S-Q"  # Replace with actual PhishTank API key
+    api_key = "AIzaSyCxJ8CJuAZPVzrs6SMeN37v_gnTlfd-S-Q"  # Safe Browsing Api Key
     response = requests.post(
         "http://checkurl.phishtank.com/checkurl/",
         data={"url": url, "format": "json", "app_key": api_key}
@@ -47,8 +47,6 @@ def phishing_scanner(url):
     report.append(check_domain_anomalies(url))
     report.append(check_for_phishing_keywords(url))
     
-    # Uncomment when using PhishTank API
-    # report.append(check_with_phishtank(url))
     
     return "\n".join(report)
 
