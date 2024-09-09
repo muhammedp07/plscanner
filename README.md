@@ -2,7 +2,7 @@
 
  Check the web application here: https://phishinglinkcanner.lol
 
-A simple yet effective phishing link scanner built with Python and Flask. This tool provides a web-based interface for users to check if a URL might be a phishing attempt. The application uses a custom phishing detection algorithm and features a modern neon-themed design.
+A simple yet effective phishing link scanner built with Python and Flask. This tool provides a web-based interface for users to check if a URL might be a phishing attempt. The application uses a custom phishing detection algorithm and features a modern neon-themed design. Phishing Link Scanner is a web application designed to identify and analyze potentially malicious phishing links. The primary goal of this project is to provide users with a tool to enhance their online security by checking links against known phishing databases.
 
 # Note
 
@@ -12,9 +12,29 @@ The site is not yet hosted online. However, you can clone this repository and ru
 
 - **Web Interface**: Enter URLs through an easy-to-use web form.
 - **Instant Analysis**: Real-time detection and results.
+- **Link Analysis**: Scans provided URLs to detect potential phishing threats.
+- **Safe Browsing Integration**: Uses Google’s Safe Browsing API to cross-check links against a comprehensive threat database.
+- **Secure Hosting**: Deployed on AWS EC2 with a custom domain and SSL certification to ensure secure communication.
 - **Neon-Themed Design**: A sleek, cyber-inspired look with dark mode and neon accents.
 - **Customizable**: Easy to adapt and extend the detection algorithms.
 
+## Hosting
+
+- **AWS EC2:** The project is hosted on an AWS EC2 instance, providing scalable and reliable cloud infrastructure.
+- **Domain Name:** The application is accessible via the custom domain [phishinglinkscanner.lol](https://phishinglinkscanner.lol).
+- **SSL Certificate:** An SSL certificate has been configured to enable secure HTTPS connections, ensuring encrypted communication between users and the server.
+
+## Setup and Configuration
+
+- **SSH Access:** PuTTY was used to connect to the EC2 instance securely and manage files. Detailed steps for connecting and managing the instance can be found [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html).
+- **Nginx Configuration:** Nginx is configured to handle both HTTP and HTTPS requests. The configuration includes:
+  - SSL setup for secure connections.
+  - Redirection from HTTP to HTTPS to ensure all traffic is encrypted.
+
+## Running the Application
+
+- **Flask:** The application is built using Flask, a lightweight web framework for Python. Flask must be running for the application to function properly.
+- **Gunicorn:** Plans are in place to set up Gunicorn for production deployment to efficiently serve the Flask application.
 
 ## Installation
 
