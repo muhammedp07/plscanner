@@ -35,8 +35,8 @@ def check_with_phishtank(url):
     )
     result = response.json()
     if result["results"]["in_database"]:
-        return "Phishing URL found in PhishTank."
-    return "URL not found in PhishTank."
+        return "Phishing URL found in Google Safe Browsing Database."
+    return "URL not found in Google Safe Browsing Database."
 
 # Main function
 def phishing_scanner(url):
