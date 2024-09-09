@@ -20,6 +20,14 @@
             color: #00ccff;
             text-shadow: 0 0 10px #2d9fa3, 0 0 20px #00ddff;
         }
+        .description {
+            text-align: center;
+            margin-top: 20px;
+            color: #00eeff;
+            font-size: 16px;
+            text-shadow: 0 0 5px #00c8ff;
+            padding: 0 20px;
+        }
         form {
             display: flex;
             flex-direction: column;
@@ -94,6 +102,12 @@
 </head>
 <body>
     <h1>Phishing Link Scanner</h1>
+    
+    <!-- New Description Section -->
+    <div class="description">
+        <p>Welcome to the Phishing Link Scanner! This tool helps you identify potentially malicious URLs by scanning them against a secure database (am using Google Safe Browsing). Simply enter a URL, and the scanner will provide real-time feedback on whether it's safe to visit.</p>
+    </div>
+
     <form method="POST">
         <input type="text" name="url" placeholder="Enter URL (e.g., https://www.google.com)" required>
         <button type="submit">Scan</button>
@@ -104,15 +118,13 @@
         <p>Please include "http://" or "https://" in the URL.</p>
     </div>
 
-
-        <h2>Scan Results:</h2>
-        <pre>{{ result }}</pre>
+    <h2>Scan Results:</h2>
+    <pre>{{ result }}</pre>
 
     <div class="social-links">
         Reach me out on LinkedIn or check out my Github:
         <a href="https://linkedin.com/in/muhammedpatel007/" target="_blank">LinkedIn</a> <br/>
         <a href="https://github.com/muhammedp07/" target="_blank">GitHub</a>
-        
     </div>
 </body>
 </html>
