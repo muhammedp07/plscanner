@@ -1,5 +1,7 @@
  # Phishing Link Scanner
 
+ C heck the web application here: https://phishinglinkcanner.lol
+
 A simple yet effective phishing link scanner built with Python and Flask. This tool provides a web-based interface for users to check if a URL might be a phishing attempt. The application uses a custom phishing detection algorithm and features a modern neon-themed design.
 
 # Note
