@@ -11,8 +11,8 @@
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            position: relative; 
-            min-height: 100vh; 
+            position: relative;
+            min-height: 100vh;
         }
         h1, h2 {
             text-align: center;
@@ -82,11 +82,21 @@
             border-radius: 10px;
             text-shadow: 0 0 5px #00ff9c;
         }
-        .statistics {
+        .how-it-works {
             text-align: center;
-            margin-top: 30px;
-            font-size: 16px;
+            margin-top: 40px;
             color: #00ccff;
+            font-size: 18px;
+            padding: 0 20px;
+            text-shadow: 0 0 5px #00c8ff;
+        }
+        .note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #ffcc00;
+            padding: 0 20px;
+            text-shadow: 0 0 5px #ffcc00;
         }
         .footer {
             text-align: center;
@@ -134,8 +144,11 @@
             input, button {
                 width: 90%;
             }
-            .statistics {
-                font-size: 14px;
+            .how-it-works {
+                font-size: 16px;
+            }
+            .note {
+                font-size: 12px;
             }
             .footer {
                 font-size: 12px;
@@ -170,13 +183,17 @@
         <p>Please include "http://" or "https://" in the URL.</p>
     </div>
 
-    <h2>Scan Results:</h2>
-    <pre>{{ result }}</pre>
+    <!-- New How It Works Section -->
+    <div class="how-it-works">
+        <h2>How It Works:</h2>
+        <p>1. Enter a URL into the input field above.</p>
+        <p>2. The tool scans the URL against a secure phishing database.</p>
+        <p>3. Receive a result indicating whether the URL is safe to visit or flagged as dangerous.</p>
+    </div>
 
-    <!-- New Statistics Section -->
-    <div class="statistics">
-        <p><strong>Total URLs Scanned:</strong> 102</p>
-        <p><strong>Last Scan:</strong> 5 minutes ago</p>
+    <!-- Note about Google Safe Browsing -->
+    <div class="note">
+        <p><strong>Note:</strong> This tool checks URLs against the Google Safe Browsing database. However, if a malicious link is not listed in the database, it may not be flagged. Please stay cautious when visiting unknown links.</p>
     </div>
 
     <div class="social-links">
@@ -185,3 +202,5 @@
         <a href="https://github.com/muhammedp07/" target="_blank">GitHub</a>
     </div>
 
+</body>
+</html>
