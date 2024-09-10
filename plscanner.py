@@ -26,15 +26,26 @@ def check_for_phishing_keywords(url):
         return "Suspicious URL: Contains phishing-related keywords."
     return "No suspicious keywords found."
 
-# ( Using Google SAfe Browing Database)
-def check_with_phishtank(url):
-    api_key = "AIzaSyCxJ8CJuAZPVzrs6SMeN37v_gnTlfd-S-Q"  # Safe Browsing Api Key
-    response = requests.post(
-        "http://checkurl.phishtank.com/checkurl/",
-        data={"url": url, "format": "json", "app_key": api_key}
-    )
+import requests
+
+def check_with_google_safe_browsing(url):
+    api_key = "AIzaSyCxJ8CJuAZPVzrs6SMeN37v_gnTlfd-S-Q"  # Replace with your actual API key
+    safe_browsing_url = "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=" + api_key
+    payload = {
+        "client": {
+            "clientId": "your_client_id",
+            "clientVersion": "1.0.0"
+        },
+        "threatInfo": {
+            "threatTypes": ["MALWARE", "SOCIAL_ENGINEERING"],
+            "platformTypes": ["ANY_PLATFORM"],
+            "threatEntryTypes": ["URL"],
+            "threatEntries": [{"url": url}]
+        }
+    }
+    response = requests.post(safe_browsing_url, json=payload)
     result = response.json()
-    if result["results"]["in_database"]:
+    if "matches" in result:
         return "Phishing URL found in Google Safe Browsing Database."
     return "URL not found in Google Safe Browsing Database."
 
@@ -46,7 +57,7 @@ def phishing_scanner(url):
     report = []
     report.append(check_domain_anomalies(url))
     report.append(check_for_phishing_keywords(url))
-    
+    report.append(check_with_google_safe_browsing(url))
     
     return "\n".join(report)
 

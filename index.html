@@ -21,6 +21,18 @@
             color: #00ccff;
             text-shadow: 0 0 10px #2d9fa3, 0 0 20px #00ddff;
         }
+        .result {
+            background-color: #1a1a1a;
+            border: 2px solid #00ff9c;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            color: #00fff2;
+            font-size: 16px;
+            border-radius: 10px;
+            text-align: center;
+            text-shadow: 0 0 5px #00ff9c;
+        }
         .description {
             text-align: center;
             margin-top: 20px;
@@ -70,17 +82,16 @@
             font-size: 14px;
             text-shadow: 0 0 5px #00c8ff;
         }
-        pre {
+        .result {
             background-color: #1a1a1a;
             border: 2px solid #00ff9c;
-            padding: 15px;
+            padding: 20px;
             margin: 20px auto;
             width: 80%;
             color: #00fff2;
             font-size: 16px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
             border-radius: 10px;
+            text-align: center;
             text-shadow: 0 0 5px #00ff9c;
         }
         .how-it-works {
@@ -144,6 +155,9 @@
             input, button {
                 width: 90%;
             }
+            .result {
+                font-size: 14px;
+            }
             .how-it-works {
                 font-size: 16px;
             }
@@ -169,7 +183,7 @@
     
     <!-- New Description Section -->
     <div class="description">
-        <p>Welcome to the Phishing Link Scanner! This tool helps you identify potentially malicious URLs by scanning them against a secure database (am using Google Safe Browsing). Simply enter a URL, and the scanner will provide real-time feedback on whether it's safe to visit.</p>
+        <p>Welcome to the Phishing Link Scanner! This tool helps you identify potentially malicious URLs by scanning them against a secure database (using Google Safe Browsing). Simply enter a URL, and the scanner will provide real-time feedback on whether it's safe to visit.</p>
     </div>
 
     <form method="POST">
@@ -180,6 +194,12 @@
     <div class="example">
         <p>Example: https://www.google.com</p>
         <p>Please include "http://" or "https://" in the URL.</p>
+    </div>
+
+    <!-- Result Section -->
+    <div class="result">
+        <p><strong>Result:</strong></p>
+        <p>{{ result }}</p>
     </div>
 
     <!-- New How It Works Section -->
