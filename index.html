@@ -4,222 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phishing Link Scanner</title>
-    <style>
-        body {
-            background-color: #0d0d0d;
-            color: #00ff9c;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            min-height: 100vh;
-            padding-bottom: 100px; /* Add space at the bottom */
-        }
-        h1, h2 {
-            text-align: center;
-            margin-top: 50px;
-            color: #00ccff;
-            text-shadow: 0 0 10px #2d9fa3, 0 0 20px #00ddff;
-        }
-        .result {
-            background-color: #1a1a1a;
-            border: 2px solid #00ff9c;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            color: #00fff2;
-            font-size: 16px;
-            border-radius: 10px;
-            text-align: center;
-            text-shadow: 0 0 5px #00ff9c;
-        }
-        .description {
-            text-align: center;
-            margin-top: 20px;
-            color: #00eeff;
-            font-size: 16px;
-            text-shadow: 0 0 5px #00c8ff;
-            padding: 0 20px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 30px;
-        }
-        input {
-            background-color: #1a1a1a;
-            border: 2px solid #00ff9c;
-            padding: 10px;
-            width: 350px;
-            max-width: 90%;
-            margin-bottom: 20px;
-            color: #00f7ff;
-            font-size: 16px;
-            border-radius: 5px;
-            text-shadow: 0 0 5px #00ff9c;
-        }
-        button {
-            padding: 10px 25px;
-            background-color: #1a1a1a;
-            color: #00ff9c;
-            font-size: 18px;
-            border: 2px solid #00ff9c;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-            text-shadow: 0 0 5px #00ff9c;
-        }
-        button:hover {
-            background-color: #00eaff;
-            color: #0d0d0d;
-            box-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c;
-        }
-        .example {
-            text-align: center;
-            margin-top: 20px;
-            color: #00eeff;
-            font-size: 14px;
-            text-shadow: 0 0 5px #00c8ff;
-        }
-        .result {
-            background-color: #1a1a1a;
-            border: 2px solid #00ff9c;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            color: #00fff2;
-            font-size: 16px;
-            border-radius: 10px;
-            text-align: center;
-            text-shadow: 0 0 5px #00ff9c;
-        }
-        .how-it-works {
-            text-align: center;
-            margin-top: 40px;
-            color: #00ccff;
-            font-size: 18px;
-            padding: 0 20px;
-            text-shadow: 0 0 5px #00c8ff;
-        }
-        .note {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #ffcc00;
-            padding: 0 20px;
-            text-shadow: 0 0 5px #ffcc00;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #111;
-            color: #00ff9c;
-            font-size: 14px;
-            text-shadow: 0 0 5px #00ff9c;
-        }
-        .footer a {
-            color: #00ccff;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            color: #00eaff;
-        }
-        .social-links {
-            position: fixed; /* Change to fixed */
-            bottom: 20px; /* Move to the bottom */
-            right: 10px;
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
-        }
-        .social-links a {
-            color: #0008ff;
-            text-decoration: none;
-            font-size: 18px;
-            text-shadow: 0 0 5px #000000;
-        }
-        .social-links a:hover {
-            color: #00eaff;
-        }
-
-        /* Media Queries for Mobile */
-        @media (max-width: 600px) {
-            h1, h2 {
-                margin-top: 30px;
-                font-size: 24px;
-            }
-            .description {
-                font-size: 14px;
-            }
-            input, button {
-                width: 90%;
-            }
-            .result {
-                font-size: 14px;
-            }
-            .how-it-works {
-                font-size: 16px;
-            }
-            .note {
-                font-size: 12px;
-            }
-            .footer {
-                font-size: 12px;
-            }
-            .social-links {
-                bottom: 10px; /* Adjust for smaller screen */
-                right: 10px;
-                gap: 5px;
-            }
-            .social-links a {
-                font-size: 16px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Phishing Link Scanner</h1>
-    
-    <!-- New Description Section -->
-    <div class="description">
-        <p>Welcome to the Phishing Link Scanner! This tool helps you identify potentially malicious URLs by scanning them against a secure database (using Google Safe Browsing). Simply enter a URL, and the scanner will provide real-time feedback on whether it's safe to visit.</p>
-    </div>
+    <header>
+        <div class="container">
+            <h1>Phishing Link Scanner</h1>
+            <p>Identify potentially malicious URLs with ease.</p>
+        </div>
+    </header>
 
-    <form method="POST">
-        <input type="text" name="url" placeholder="Enter URL (e.g., https://www.google.com)" required>
-        <button type="submit">Scan</button>
-    </form>
+    <main>
+        <div class="container">
+            <section class="scanner">
+                <form method="POST">
+                    <input type="text" name="url" placeholder="Enter URL (e.g., https://www.google.com)" required>
+                    <button type="submit"><i class="fas fa-search"></i> Scan</button>
+                </form>
+            </section>
 
-    <div class="example">
-        <p>Example: https://www.google.com</p>
-        <p>Please include "http://" or "https://" in the URL.</p>
-    </div>
+            <section class="result">
+                <h2>Scan Result</h2>
+                <p>{{ result }}</p>
+            </section>
 
-    <!-- Result Section -->
-    <div class="result">
-        <p><strong>Result:</strong></p>
-        <p>{{ result }}</p>
-    </div>
+            <section class="info">
+                <h2>How It Works</h2>
+                <ol>
+                    <li>Enter a URL into the input field above.</li>
+                    <li>The tool scans the URL against a secure phishing database.</li>
+                    <li>Receive feedback indicating if the URL is safe or flagged as dangerous.</li>
+                </ol>
+            </section>
 
-    <!-- New How It Works Section -->
-    <div class="how-it-works">
-        <h2>How It Works:</h2>
-        <p>1. Enter a URL into the input field above.</p>
-        <p>2. The tool scans the URL against a secure phishing database.</p>
-        <p>3. Receive a result indicating whether the URL is safe to visit or flagged as dangerous.</p>
-    </div>
+            <section class="note">
+                <p><strong>Note:</strong> This tool checks URLs against the Google Safe Browsing database. If a malicious link is not listed, it may not be flagged. Always exercise caution with unknown links.</p>
+            </section>
+        </div>
+    </main>
 
-    <!-- Note about Google Safe Browsing -->
-    <div class="note">
-        <p><strong>Note:</strong> This tool checks URLs against the Google Safe Browsing database. However, if a malicious link is not listed in the database, it may not be flagged. Please stay cautious when visiting unknown links.</p>
-    </div>
-
-    <div class="social-links">
-        Reach me out on LinkedIn or check out my Github: 
-        <a href="https://linkedin.com/in/muhammedpatel007/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/muhammedp07/" target="_blank">GitHub</a>
-    </div>
-
+    <footer>
+        <div class="container">
+            <p>Connect with me:</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/muhammedpatel007/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/muhammedp07/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
